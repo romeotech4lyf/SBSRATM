@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/list_item_recyclerview_card_cardview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@color/colorOffWhite"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="2dp">
+
+    <TextView
+        android:id="@+id/list_item_recyclerview_card_rr_no"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:background="@color/colorAccent"
+        android:gravity="start"
+        android:padding="5dp"
+        android:text="RR: 1200803123536RQCRZ"
+        android:textColor="@color/colorWhite"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/list_item_recyclerview_card_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:background="@color/colorAccent"
+        android:gravity="bottom|end"
+        android:paddingTop="10dp"
+        android:paddingEnd="5dp"
+        android:text="Amount(INR): 46857"
+        android:textColor="@color/colorWhite"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:id="@+id/list_item_recyclerview_card_expandable_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:el_expanded="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/list_item_recyclerview_card_masked_pan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Masked PAN: XX654XX"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/list_item_recyclerview_card_first_six_digits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Card First Six Digits: 176659"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
+
+            <TextView
+                android:id="@+id/list_item_recyclerview_card_expiry_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Card Expiry Date: 22/03/12"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/list_item_recyclerview_card_device_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Device Id: 021612392793"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/list_item_recyclerview_card_holder_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="110dp"
+            android:background="@color/colorWhite"
+            android:gravity="bottom|start"
+            android:padding="5dp"
+            android:text="Card Holder Name: S.John"
+            android:textColor="@color/colorAccent"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/list_item_recyclerview_card_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="110dp"
+            android:gravity="bottom|end"
+            android:padding="5dp"
+            android:text="Date: 22/04/2020"
+            android:textColor="@color/colorAccent"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+    </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+</androidx.cardview.widget.CardView>
