@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        app:el_expanded="false"
+        app:el_expanded="true"
         android:id="@+id/list_item_recyclerview_cyber_plat_expandable_layout">
 
         <LinearLayout
@@ -64,6 +64,16 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="12dp"
                 android:textStyle="normal" />
+            <TextView
+                android:id="@+id/list_item_recyclerview_cyber_plat_beneficiary_phone_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Beneficiary Phone Number: 9175982639"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/list_item_recyclerview_cyber_plat_remitter_id"
@@ -72,6 +82,16 @@
                 android:gravity="bottom|start"
                 android:padding="5dp"
                 android:text="Remitter Id: 7231247"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+            <TextView
+                android:id="@+id/list_item_recyclerview_cyber_plat_remitter_phone_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Beneficiary Phone Number: 8901782639"
                 android:textColor="@color/colorBlack"
                 android:textSize="12dp"
                 android:textStyle="normal" />
@@ -114,7 +134,7 @@
             android:textColor="@color/colorAccent"
             android:textSize="12dp"
             android:textStyle="bold"
-            android:layout_marginTop="110dp"/>
+            android:layout_marginTop="160dp"/>
 
         <TextView
             android:id="@+id/list_item_recyclerview_cyber_plat_charged_amt"
@@ -127,7 +147,7 @@
             android:textColor="@color/colorAccent"
             android:textSize="12dp"
             android:textStyle="bold"
-            android:layout_marginTop="110dp"/>
+            android:layout_marginTop="160dp"/>
     </net.cachapa.expandablelayout.ExpandableLayout>
 
 

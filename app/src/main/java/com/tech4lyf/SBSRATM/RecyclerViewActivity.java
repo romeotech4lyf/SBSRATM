@@ -1,6 +1,8 @@
 package com.tech4lyf.SBSRATM;
 
 import android.os.Bundle;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -20,8 +22,12 @@ import java.util.List;
 
 public class RecyclerViewActivity extends AppCompatActivity {
 
-    private String type = null;
     private RecyclerView recyclerView;
+    private RadioGroup radioGroup;
+    private RadioButton radioButtonRemitterPhone;
+    private RadioButton radioButtonDate;
+    private RadioButton radioButtonAmount;
+    private String type = null;
     private List<CyberPlat> cyberPlats;
     private List<Card> cards;
     private RecyclerViewAdapterCyberPlat recyclerViewAdapterCyberPlat;
@@ -35,12 +41,38 @@ public class RecyclerViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycler_view);
         cyberPlats = Arrays.asList(new CyberPlat[1]);
         cards = Arrays.asList(new Card[1]);
-        cyberPlatViewModel = ViewModelProviders.of(RecyclerViewActivity.this).get(CyberPlatViewModel.class);
-        cardViewModel= ViewModelProviders.of(RecyclerViewActivity.this).get(CardViewModel.class);
-        type = getIntent().getStringExtra("TYPE");
-        recyclerView = findViewById(R.id.activity_recycler_view_recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(RecyclerViewActivity.this, LinearLayoutManager.VERTICAL, false));
 
+        cyberPlatViewModel = ViewModelProviders.of(RecyclerViewActivity.this).get(CyberPlatViewModel.class);
+        cardViewModel = ViewModelProviders.of(RecyclerViewActivity.this).get(CardViewModel.class);
+        type = getIntent().getStringExtra("TYPE");
+
+        //initialize views
+        recyclerView = findViewById(R.id.activity_recycler_view_recyclerview);
+        radioGroup = findViewById(R.id.activity_recycler_view_radio_group);
+        radioButtonRemitterPhone = findViewById(R.id.activity_recycler_view_radio_phone);
+        radioButtonAmount = findViewById(R.id.activity_recycler_view_radio_amount);
+        radioButtonDate = findViewById(R.id.activity_recycler_view_radio_date);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.activity_recycler_view_radio_phone:
+
+                        break;
+                    case R.id.activity_recycler_view_radio_date:
+                        break;
+                    case R.id.activity_recycler_view_radio_amount:
+                        break;
+                    default:
+                        break;
+
+                }
+
+            }
+        });
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(RecyclerViewActivity.this, LinearLayoutManager.VERTICAL, false));
 
 
         if (type.equals("CYBERPLAT")) {

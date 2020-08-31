@@ -21,8 +21,10 @@ public class CyberPlat implements Serializable, Parcelable {
     public String ref_no;
     public String opr_id;
     public String name;
+    public String RemitterPhone;
+    public String BeneficiaryPhone;
 
-    public CyberPlat(String SD, String AP, String OP, String sessionNo, String remitterID, String beneficiaryID, String routingType, String amount, String charged_amt, String locked_amt, String transferStatus, String ipay_id, String ref_no, String opr_id, String name) {
+    public CyberPlat(String SD, String AP, String OP, String sessionNo, String remitterID, String beneficiaryID, String routingType, String amount, String charged_amt, String locked_amt, String transferStatus, String ipay_id, String ref_no, String opr_id, String name, String RemitterPhone, String BeneficiaryPhone) {
         this.SD = SD;
         this.AP = AP;
         this.OP = OP;
@@ -38,9 +40,27 @@ public class CyberPlat implements Serializable, Parcelable {
         this.ref_no = ref_no;
         this.opr_id = opr_id;
         this.name = name;
+        this.RemitterPhone = RemitterPhone;
+        this.BeneficiaryPhone = BeneficiaryPhone;
     }
 
     public CyberPlat() {
+    }
+
+    public String getRemitterPhone() {
+        return RemitterPhone;
+    }
+
+    public void setRemitterPhone(String remitterPhone) {
+        RemitterPhone = remitterPhone;
+    }
+
+    public String getBeneficiaryPhone() {
+        return BeneficiaryPhone;
+    }
+
+    public void setBeneficiaryPhone(String beneficiaryPhone) {
+        BeneficiaryPhone = beneficiaryPhone;
     }
 
     public String getSD() {

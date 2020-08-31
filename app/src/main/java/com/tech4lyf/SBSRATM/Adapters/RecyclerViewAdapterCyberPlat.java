@@ -26,6 +26,7 @@ public class RecyclerViewAdapterCyberPlat extends RecyclerView.Adapter<RecyclerV
         this.context = context;
     }
 
+
     public List<CyberPlat> getCyberPlats() {
         return cyberPlats;
     }
@@ -55,7 +56,9 @@ public class RecyclerViewAdapterCyberPlat extends RecyclerView.Adapter<RecyclerV
             holder.ipayId.setText("Id: " + cyberPlat.getIpay_id());
             holder.amount.setText("Amount(INR): " + cyberPlat.getAmount());
             holder.beneficiaryId.setText("Beneficiary Id: " + cyberPlat.getBeneficiaryID());
+            holder.beneficiaryPhoneNo.setText("Beneficiary Phone No: " + cyberPlat.getBeneficiaryPhone());
             holder.remitterId.setText("Remitter Id: " + cyberPlat.getRemitterID());
+            holder.remitterPhoneNo.setText("Remitter Phone No: " + cyberPlat.getRemitterPhone());
             holder.refNo.setText("Ref no: " + cyberPlat.getRef_no());
             holder.oprId.setText("Opr Id: " + cyberPlat.getOpr_id());
             holder.name.setText("Name: " + cyberPlat.getName());
@@ -87,7 +90,9 @@ public class RecyclerViewAdapterCyberPlat extends RecyclerView.Adapter<RecyclerV
         private TextView ipayId;
         private TextView amount;
         private TextView beneficiaryId;
+        private TextView beneficiaryPhoneNo;
         private TextView remitterId;
+        private TextView remitterPhoneNo;
         private TextView refNo;
         private TextView oprId;
         private TextView name;
@@ -99,7 +104,9 @@ public class RecyclerViewAdapterCyberPlat extends RecyclerView.Adapter<RecyclerV
             ipayId = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_ipay_id);
             amount = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_amount);
             beneficiaryId = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_beneficiary_id);
+            beneficiaryPhoneNo = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_beneficiary_phone_no);
             remitterId = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_remitter_id);
+            remitterPhoneNo = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_remitter_phone_no);
             refNo = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_ref_no);
             oprId = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_opr_id);
             name = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_name);
