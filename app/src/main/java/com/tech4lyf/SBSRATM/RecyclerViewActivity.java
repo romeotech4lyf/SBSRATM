@@ -156,12 +156,15 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.activity_recycler_view_radio_phone:
                         searchType = "PHONE";
+                        editTextSearch.setHint("Search by Phone Number");
                         break;
                     case R.id.activity_recycler_view_radio_date:
                         searchType = "DATE";
+                        editTextSearch.setHint("Search by Transaction Date");
                         break;
                     case R.id.activity_recycler_view_radio_amount:
                         searchType = "AMOUNT";
+                        editTextSearch.setHint("Search by Transaction Amount");
                         break;
                     default:
                         break;
