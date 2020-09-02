@@ -39,7 +39,7 @@ public class CardViewModel extends AndroidViewModel {
     private void getCard() {
 
 
-        final String urlString = "https://developers.tech4lyf.com/romeotamizh/sbsr/tblCardWithdraw.php";
+        final String urlString = "https://sbsrkannam.com/dashboard/tblCardWithdraw.php";
         new Thread(new Runnable() {
             @Override
             public void run() {

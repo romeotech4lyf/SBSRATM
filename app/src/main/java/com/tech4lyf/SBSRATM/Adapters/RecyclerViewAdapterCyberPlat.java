@@ -1,6 +1,7 @@
 package com.tech4lyf.SBSRATM.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.tech4lyf.SBSRATM.EventHandlers;
 import com.tech4lyf.SBSRATM.Models.CyberPlat;
 import com.tech4lyf.SBSRATM.R;
 
@@ -17,12 +19,24 @@ import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.util.List;
 
-public class RecyclerViewAdapterCyberPlat extends RecyclerView.Adapter<RecyclerViewAdapterCyberPlat.ViewHolder> {
+public class RecyclerViewAdapterCyberPlat extends RecyclerView.Adapter<RecyclerViewAdapterCyberPlat.ViewHolder>  {
     private List<CyberPlat> cyberPlats;
+    private List<CyberPlat> cyberPlatsSearch;
+    private List<CyberPlat> cyberPlatsTemp;
     private Context context;
+    private int size =0;
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    private EventHandlers eventHandlers = new EventHandlers();
 
     public RecyclerViewAdapterCyberPlat(List<CyberPlat> cyberPlats, Context context) {
         this.cyberPlats = cyberPlats;
+        this.cyberPlatsSearch=cyberPlats;
+        this.cyberPlatsTemp=cyberPlats;
+        this.size = cyberPlats.size();
         this.context = context;
     }
 
@@ -84,22 +98,70 @@ public class RecyclerViewAdapterCyberPlat extends RecyclerView.Adapter<RecyclerV
         return cyberPlats.size();
     }
 
+
+   /* public void onCyberPlatSearch(String search, final String searchType) {
+        if (search != null && searchType!=null) {
+
+            cyberPlatsSearch.clear();
+
+            Log.d(search, "searchType");
+            switch (searchType) {
+                case "PHONE":
+                    for (CyberPlat cyberPlat : cyberPlats)
+                        if (cyberPlat.getRemitterPhone().contains(search))
+                            cyberPlatsSearch.add(cyberPlat);
+
+                        break;
+
+                case "DATE":
+                    for (CyberPlat cyberPlat : cyberPlats)
+                        if (cyberPlat.getSD().contains(search))
+                            cyberPlatsSearch.add(cyberPlat);
+
+                    break;
+
+                case "AMOUNT":
+                    for (CyberPlat cyberPlat : this.cyberPlats)
+                        if (cyberPlat.getAmount().contains(search))
+                            this.cyberPlatsSearch.add(cyberPlat);
+                    Log.d("amount",this.cyberPlats.toString());
+
+                    break;
+
+                default:break;
+            }
+
+            if(cyberPlatsSearch.size()==0) {
+                Log.d(search, "Not Found");
+                this.setCyberPlats(this.cyberPlats);
+            }
+            this.setCyberPlats(this.cyberPlatsSearch);
+            this.setSize(this.cyberPlatsSearch.size());
+            this.notifyDataSetChanged();
+
+            }
+
+        }*/
+
+
+
+
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        private CardView cardView;
-        private TextView ipayId;
-        private TextView amount;
-        private TextView beneficiaryId;
-        private TextView beneficiaryPhoneNo;
-        private TextView remitterId;
-        private TextView remitterPhoneNo;
-        private TextView refNo;
-        private TextView oprId;
-        private TextView name;
-        private TextView chargedAmount;
-        private ExpandableLayout expandableLayout;
+        CardView cardView;
+        TextView ipayId;
+        TextView amount;
+        TextView beneficiaryId;
+        TextView beneficiaryPhoneNo;
+        TextView remitterId;
+        TextView remitterPhoneNo;
+        TextView refNo;
+        TextView oprId;
+        TextView name;
+        TextView chargedAmount;
+        ExpandableLayout expandableLayout;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             ipayId = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_ipay_id);
             amount = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_amount);
