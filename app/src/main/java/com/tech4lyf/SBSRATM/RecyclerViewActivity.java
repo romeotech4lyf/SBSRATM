@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
@@ -81,29 +82,70 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 if (type.equals("CYBERPLAT")) {
                     List<CyberPlat> cyberPlatsSearch = new ArrayList<CyberPlat>(Arrays.asList(new CyberPlat[0]));
 
-                    for (CyberPlat cyberPlat : cyberPlats)
-                        if (searchType.equals("AMOUNT") && cyberPlat.getAmount().contains(search)
-                                || searchType.equals("PHONE") && cyberPlat.getRemitterPhone().contains(search)
-                                || searchType.equals("DATE") && cyberPlat.getSD().contains(search))
-                            cyberPlatsSearch.add(cyberPlat);
+                    for (CyberPlat cyberPlat : cyberPlats) {
+                        switch (searchType) {
+                            case "AMOUNT":
+                                if (cyberPlat.getAmount() != null)
+                                    if (cyberPlat.getAmount().contains(search))
+                                        cyberPlatsSearch.add(cyberPlat);
+                                break;
 
-                    recyclerViewAdapterCyberPlat.setCyberPlats(cyberPlatsSearch);
-                    recyclerViewAdapterCyberPlat.notifyDataSetChanged();
-                    Log.d(search, cyberPlatsSearch.toString());
+                            case "PHONE":
+                                if (cyberPlat.getRemitterPhone() != null)
+                                    if (cyberPlat.getRemitterPhone().contains(search))
+                                        cyberPlatsSearch.add(cyberPlat);
+                                break;
 
+                            case "DATE":
+                                if (cyberPlat.getTrans_date() != null)
+                                    if (cyberPlat.getTrans_date().contains(search))
+                                        cyberPlatsSearch.add(cyberPlat);
+                                break;
+
+                            default:
+                                break;
+
+
+                        }
+
+
+                        recyclerViewAdapterCyberPlat.setCyberPlats(cyberPlatsSearch);
+                        recyclerViewAdapterCyberPlat.notifyDataSetChanged();
+                        Log.d(search, cyberPlatsSearch.toString());
+                    }
                 }
                 if (type.equals("CARD")) {
                     List<Card> cardsSearch = new ArrayList<Card>(Arrays.asList(new Card[0]));
-                    for (Card card : cards)
-                        if (searchType.equals("AMOUNT") && card.getAmount().contains(search)
-                                || searchType.equals("PHONE") && card.getMobileNo().contains(search)
-                                || searchType.equals("DATE") && card.getMID().contains(search))
-                            cardsSearch.add(card);
+                    for (Card card : cards) {
+                        switch (searchType) {
+                            case "AMOUNT":
+                                if (card.getAmount() != null)
+                                    if (card.getAmount().contains(search))
+                                        cardsSearch.add(card);
+                                break;
 
-                    recyclerViewAdapterCard.setCards(cardsSearch);
-                    recyclerViewAdapterCard.notifyDataSetChanged();
+                            case "PHONE":
+                                if (card.getMobileNo() != null)
+                                    if (card.getMobileNo().contains(search))
+                                        cardsSearch.add(card);
+                                break;
+
+                            case "DATE":
+                                if (card.getTransactionDate() != null)
+                                    if (card.getTransactionDate().contains(search))
+                                        cardsSearch.add(card);
+                                break;
+
+                            default:
+                                break;
 
 
+                        }
+                        recyclerViewAdapterCard.setCards(cardsSearch);
+                        recyclerViewAdapterCard.notifyDataSetChanged();
+                        Log.d(search, cardsSearch.toString());
+
+                    }
                 }
             }
         });

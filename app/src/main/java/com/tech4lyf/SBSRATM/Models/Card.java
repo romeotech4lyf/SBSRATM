@@ -21,11 +21,20 @@ public class Card implements Serializable, Parcelable {
     public String cardFirstSixDigits;
     public String expiryDate;
     public String maskedPAN;
+    public String trans_date;
+
+    public String getTrans_date() {
+        return trans_date;
+    }
+
+    public void setTrans_date(String trans_date) {
+        this.trans_date = trans_date;
+    }
 
     public Card() {
     }
 
-    public Card(String sessionNo, String deviceId, String mobileNo, String amount, String transactionStatus, String authCode, String RRNo, String MID, String TID, String transactionDate, String cardHolderName, String cardFirstSixDigits, String expiryDate, String maskedPAN) {
+    public Card(String sessionNo, String deviceId, String trans_date, String mobileNo, String amount, String transactionStatus, String authCode, String RRNo, String MID, String TID, String transactionDate, String cardHolderName, String cardFirstSixDigits, String expiryDate, String maskedPAN) {
         SessionNo = sessionNo;
         DeviceId = deviceId;
         MobileNo = mobileNo;
@@ -34,6 +43,7 @@ public class Card implements Serializable, Parcelable {
         AuthCode = authCode;
         this.RRNo = RRNo;
         this.MID = MID;
+        this.trans_date = trans_date;
         this.TID = TID;
         TransactionDate = transactionDate;
         this.cardHolderName = cardHolderName;

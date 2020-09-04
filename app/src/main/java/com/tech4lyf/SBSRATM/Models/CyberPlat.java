@@ -23,8 +23,17 @@ public class CyberPlat implements Serializable, Parcelable {
     public String name;
     public String RemitterPhone;
     public String BeneficiaryPhone;
+    public String trans_date;
 
-    public CyberPlat(String SD, String AP, String OP, String sessionNo, String remitterID, String beneficiaryID, String routingType, String amount, String charged_amt, String locked_amt, String transferStatus, String ipay_id, String ref_no, String opr_id, String name, String RemitterPhone, String BeneficiaryPhone) {
+    public String getTrans_date() {
+        return trans_date;
+    }
+
+    public void setTrans_date(String trans_date) {
+        this.trans_date = trans_date;
+    }
+
+    public CyberPlat(String SD, String AP, String OP, String sessionNo, String remitterID, String beneficiaryID, String routingType, String amount, String charged_amt, String locked_amt, String transferStatus, String ipay_id, String ref_no, String opr_id, String name, String RemitterPhone, String BeneficiaryPhone, String trans_date) {
         this.SD = SD;
         this.AP = AP;
         this.OP = OP;
@@ -35,6 +44,7 @@ public class CyberPlat implements Serializable, Parcelable {
         this.amount = amount;
         this.charged_amt = charged_amt;
         this.locked_amt = locked_amt;
+        this.trans_date = trans_date;
         TransferStatus = transferStatus;
         this.ipay_id = ipay_id;
         this.ref_no = ref_no;

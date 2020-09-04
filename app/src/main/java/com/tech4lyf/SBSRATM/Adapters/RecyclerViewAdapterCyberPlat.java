@@ -73,6 +73,7 @@ public class RecyclerViewAdapterCyberPlat extends RecyclerView.Adapter<RecyclerV
             holder.beneficiaryPhoneNo.setText("Beneficiary Phone No: " + cyberPlat.getBeneficiaryPhone());
             holder.remitterId.setText("Remitter Id: " + cyberPlat.getRemitterID());
             holder.remitterPhoneNo.setText("Remitter Phone No: " + cyberPlat.getRemitterPhone());
+            holder.transDate.setText("Transaction Date: " + cyberPlat.getTrans_date());
             holder.refNo.setText("Ref no: " + cyberPlat.getRef_no());
             holder.oprId.setText("Opr Id: " + cyberPlat.getOpr_id());
             holder.name.setText("Name: " + cyberPlat.getName());
@@ -155,6 +156,7 @@ public class RecyclerViewAdapterCyberPlat extends RecyclerView.Adapter<RecyclerV
         TextView beneficiaryPhoneNo;
         TextView remitterId;
         TextView remitterPhoneNo;
+        TextView transDate;
         TextView refNo;
         TextView oprId;
         TextView name;
@@ -169,6 +171,7 @@ public class RecyclerViewAdapterCyberPlat extends RecyclerView.Adapter<RecyclerV
             beneficiaryPhoneNo = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_beneficiary_phone_no);
             remitterId = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_remitter_id);
             remitterPhoneNo = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_remitter_phone_no);
+            transDate = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_trans_date);
             refNo = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_ref_no);
             oprId = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_opr_id);
             name = itemView.findViewById(R.id.list_item_recyclerview_cyber_plat_name);

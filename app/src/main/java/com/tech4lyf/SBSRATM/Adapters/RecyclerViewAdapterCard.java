@@ -58,6 +58,7 @@ public class RecyclerViewAdapterCard extends RecyclerView.Adapter<RecyclerViewAd
             holder.cardFirstSixDigits.setText("Card First Six Digits: "+card.getCardFirstSixDigits());
             holder.cardExpiryDate.setText("Card Expiry Date: "+card.getExpiryDate());
             holder.deviceId.setText("Device Id: "+card.getDeviceId());
+            holder.mobileNo.setText("Mobile No: "+card.getMobileNo());
             holder.cardHolderName.setText("Card Holder Name: "+card.getCardHolderName());
             holder.date.setText(card.getTransactionDate());
 
@@ -89,6 +90,7 @@ public class RecyclerViewAdapterCard extends RecyclerView.Adapter<RecyclerViewAd
         TextView cardFirstSixDigits;
         TextView cardExpiryDate;
         TextView deviceId;
+        TextView mobileNo;
         TextView cardHolderName;
         TextView date;
         ExpandableLayout expandableLayout;
@@ -103,6 +105,7 @@ public class RecyclerViewAdapterCard extends RecyclerView.Adapter<RecyclerViewAd
             cardFirstSixDigits = itemView.findViewById(R.id.list_item_recyclerview_card_first_six_digits);
             cardExpiryDate = itemView.findViewById(R.id.list_item_recyclerview_card_expiry_date);
             deviceId = itemView.findViewById(R.id.list_item_recyclerview_card_device_id);
+            mobileNo = itemView.findViewById(R.id.list_item_recyclerview_card_mobile_no);
             cardHolderName = itemView.findViewById(R.id.list_item_recyclerview_card_holder_name);
             date = itemView.findViewById(R.id.list_item_recyclerview_card_date);
             expandableLayout = itemView.findViewById(R.id.list_item_recyclerview_card_expandable_layout);
