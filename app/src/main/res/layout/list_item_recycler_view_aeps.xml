@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list_item_recyclerview_cyber_plat_cardview"
+    android:id="@+id/list_item_recyclerview_aeps_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -17,21 +16,20 @@
 
 
     <TextView
-        android:id="@+id/list_item_recyclerview_cyber_plat_ipay_id"
+        android:id="@+id/list_item_recyclerview_aeps_retailer_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top|start"
         android:background="@color/colorAccent"
         android:gravity="start"
         android:padding="5dp"
-        android:text="Id: 1200803123536RQCRZ"
+        android:text="RId: 1200803123536RQCRZ"
         android:textColor="@color/colorWhite"
         android:textSize="20dp"
-        android:textStyle="bold"
-         />
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/list_item_recyclerview_cyber_plat_amount"
+        android:id="@+id/list_item_recyclerview_aeps_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|end"
@@ -42,15 +40,14 @@
         android:text="Amount(INR): 46857"
         android:textColor="@color/colorWhite"
         android:textSize="12dp"
-        android:textStyle="normal"
-         />
+        android:textStyle="bold" />
 
     <net.cachapa.expandablelayout.ExpandableLayout
-        android:id="@+id/list_item_recyclerview_cyber_plat_expandable_layout"
+        android:id="@+id/list_item_recyclerview_aeps_expandable_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        app:el_expanded="true">
+        app:el_expanded="false">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,98 +55,78 @@
             android:background="@color/colorWhite"
             android:orientation="vertical">
 
+
             <TextView
-                android:id="@+id/list_item_recyclerview_cyber_plat_beneficiary_id"
+                android:id="@+id/list_item_recyclerview_aeps_transaction_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
                 android:padding="5dp"
-                android:text="Beneficiary Id: 17622639"
+                android:text="Transaction Id :  9098765"
                 android:textColor="@color/colorBlack"
                 android:textSize="12dp"
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/list_item_recyclerview_cyber_plat_beneficiary_phone_no"
+                android:id="@+id/list_item_recyclerview_aeps_kioskid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
                 android:padding="5dp"
-                android:text="Beneficiary Phone Number: 9175982639"
-                android:textColor="@color/colorBlack"
-                android:textSize="12dp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/list_item_recyclerview_cyber_plat_remitter_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="bottom|start"
-                android:padding="5dp"
-                android:text="Remitter Id: 7231247"
-                android:textColor="@color/colorBlack"
-                android:textSize="12dp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/list_item_recyclerview_cyber_plat_remitter_phone_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="bottom|start"
-                android:padding="5dp"
-                android:text="Beneficiary Phone Number: 8901782639"
+                android:text="kioskid :75367839"
                 android:textColor="@color/colorBlack"
                 android:textSize="12dp"
                 android:textStyle="normal" />
 
 
             <TextView
-                android:id="@+id/list_item_recyclerview_cyber_plat_ref_no"
+                android:id="@+id/list_item_recyclerview_aeps_bcid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
                 android:padding="5dp"
-                android:text="Ref No: 02161239279"
+                android:text="bcid :7268767829"
                 android:textColor="@color/colorBlack"
                 android:textSize="12dp"
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/list_item_recyclerview_cyber_plat_opr_id"
+                android:id="@+id/list_item_recyclerview_aeps_service_provider_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
                 android:padding="5dp"
-                android:text="Opr Id: 021612392793"
+                android:text="Provider Id: 021612392793"
                 android:textColor="@color/colorBlack"
                 android:textSize="12dp"
                 android:textStyle="normal" />
+
 
         </LinearLayout>
 
         <TextView
-            android:id="@+id/list_item_recyclerview_cyber_plat_name"
+            android:id="@+id/list_item_recyclerview_aeps_trans_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="110dp"
             android:background="@color/colorWhite"
             android:gravity="bottom|start"
             android:padding="5dp"
-            android:text="Name: Mrs Vijayalakshmi"
+            android:text="Date: 22/04/20`20 - 22:03:03"
             android:textColor="@color/colorAccent"
             android:textSize="12dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/list_item_recyclerview_cyber_plat_charged_amt"
+            android:id="@+id/list_item_recyclerview_aeps_total_amount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="110dp"
             android:gravity="bottom|end"
             android:padding="5dp"
-            android:text="Charged(INR):  46857"
+            android:text="Total amount(INR): 3420"
             android:textColor="@color/colorAccent"
             android:textSize="12dp"
             android:textStyle="bold" />

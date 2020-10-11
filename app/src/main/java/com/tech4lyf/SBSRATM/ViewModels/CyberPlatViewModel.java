@@ -1,4 +1,4 @@
-package com.tech4lyf.SBSRATM.Models;
+package com.tech4lyf.SBSRATM.ViewModels;
 
 import android.app.Application;
 import android.util.Log;
@@ -8,6 +8,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.gson.Gson;
+import com.tech4lyf.SBSRATM.Models.CyberPlat;
 
 import org.json.JSONArray;
 import org.json.JSONException;

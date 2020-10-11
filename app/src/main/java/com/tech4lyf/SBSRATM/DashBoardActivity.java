@@ -63,6 +63,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
 
         dashBoardCyberPlat.setOnClickListener(this);
         dashBoardCard.setOnClickListener(this);
+        dashBoardAeps.setOnClickListener(this);
 
 
     }
@@ -77,6 +78,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                 startRecyclerViewActivity("CARD");
                 break;
             case R.id.activity_dash_board_dashboard_aeps:
+                startRecyclerViewActivity("AEPS");
                 break;
             case R.id.activity_dash_board_dashboard_bbps:
                 break;
