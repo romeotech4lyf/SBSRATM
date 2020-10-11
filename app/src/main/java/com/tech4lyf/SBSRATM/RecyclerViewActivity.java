@@ -18,14 +18,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterAeps;
 import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterCard;
 import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterCyberPlat;
+import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterDMT;
 import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterMswipe;
 import com.tech4lyf.SBSRATM.Models.Aeps;
 import com.tech4lyf.SBSRATM.Models.Card;
 import com.tech4lyf.SBSRATM.Models.CyberPlat;
+import com.tech4lyf.SBSRATM.Models.DMT;
 import com.tech4lyf.SBSRATM.Models.Mswipe;
 import com.tech4lyf.SBSRATM.ViewModels.AepsViewModel;
 import com.tech4lyf.SBSRATM.ViewModels.CardViewModel;
 import com.tech4lyf.SBSRATM.ViewModels.CyberPlatViewModel;
+import com.tech4lyf.SBSRATM.ViewModels.DMTViewModel;
 import com.tech4lyf.SBSRATM.ViewModels.MswipeViewModel;
 
 import java.util.ArrayList;
@@ -45,27 +48,31 @@ public class RecyclerViewActivity extends AppCompatActivity {
     private String type = null;
     private String searchType = null;
     private String search = null;
-    private List<CyberPlat> cyberPlats;
-    private List<Card> cards;
-    private List<Aeps> aepss;
-    private List<Mswipe> mswipes;
+    private List<CyberPlat> cyberPlatList;
+    private List<Card> cardList;
+    private List<Aeps> aepsList;
+    private List<Mswipe> mswipeList;
+    private List<DMT> dmtList;
     private RecyclerViewAdapterCyberPlat recyclerViewAdapterCyberPlat;
     private RecyclerViewAdapterCard recyclerViewAdapterCard;
     private RecyclerViewAdapterAeps recyclerViewAdapterAeps;
     private RecyclerViewAdapterMswipe recyclerViewAdapterMswipe;
+    private RecyclerViewAdapterDMT recyclerViewAdapterDMT;
     private CyberPlatViewModel cyberPlatViewModel;
     private CardViewModel cardViewModel;
     private AepsViewModel aepsViewModel;
     private MswipeViewModel mswipeViewModel;
+    private DMTViewModel dmtViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
-        cyberPlats = new ArrayList<>();
-        cards = new ArrayList<>();
-        aepss = new ArrayList<>();
-        mswipes = new ArrayList<>();
+        cyberPlatList = new ArrayList<>();
+        cardList = new ArrayList<>();
+        aepsList = new ArrayList<>();
+        mswipeList = new ArrayList<>();
+        dmtList = new ArrayList<>();
 
 
         type = getIntent().getStringExtra("TYPE");
@@ -91,7 +98,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 if (type.equals("CYBERPLAT")) {
                     List<CyberPlat> cyberPlatsSearch = new ArrayList<CyberPlat>(Arrays.asList(new CyberPlat[0]));
 
-                    for (CyberPlat cyberPlat : cyberPlats) {
+                    for (CyberPlat cyberPlat : cyberPlatList) {
                         switch (searchType) {
                             case "AMOUNT":
                                 if (cyberPlat.getAmount() != null)
@@ -125,7 +132,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 }
                 if (type.equals("CARD")) {
                     List<Card> cardsSearch = new ArrayList<Card>(Arrays.asList(new Card[0]));
-                    for (Card card : cards) {
+                    for (Card card : cardList) {
                         switch (searchType) {
                             case "AMOUNT":
                                 if (card.getAmount() != null)
@@ -163,11 +170,11 @@ public class RecyclerViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (type.equals("CYBERPLAT")) {
-                    recyclerViewAdapterCyberPlat.setCyberPlats(cyberPlats);
+                    recyclerViewAdapterCyberPlat.setCyberPlats(cyberPlatList);
                     recyclerViewAdapterCyberPlat.notifyDataSetChanged();
                 }
                 if (type.equals("CARD")) {
-                    recyclerViewAdapterCard.setCards(cards);
+                    recyclerViewAdapterCard.setCards(cardList);
                     recyclerViewAdapterCard.notifyDataSetChanged();
 
                 }
@@ -228,28 +235,28 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
 
         if (type.equals("CYBERPLAT")) {
-            recyclerViewAdapterCyberPlat = new RecyclerViewAdapterCyberPlat(cyberPlats, RecyclerViewActivity.this);
+            recyclerViewAdapterCyberPlat = new RecyclerViewAdapterCyberPlat(cyberPlatList, RecyclerViewActivity.this);
             recyclerView.setAdapter(recyclerViewAdapterCyberPlat);
             cyberPlatViewModel = ViewModelProviders.of(RecyclerViewActivity.this).get(CyberPlatViewModel.class);
             cyberPlatViewModel.getCyberPlats().observe(RecyclerViewActivity.this, new Observer<List<CyberPlat>>() {
                 @Override
                 public void onChanged(List<CyberPlat> cyberPlats) {
-                    RecyclerViewActivity.this.cyberPlats = cyberPlats;
-                    recyclerViewAdapterCyberPlat.setCyberPlats(cyberPlats);
-                    recyclerViewAdapterCyberPlat.setSize(cyberPlats.size());
+                    cyberPlatList = cyberPlats;
+                    recyclerViewAdapterCyberPlat.setCyberPlats(cyberPlatList);
                     recyclerViewAdapterCyberPlat.notifyDataSetChanged();
 
                 }
             });
+
         } else if (type.equals("CARD")) {
-            recyclerViewAdapterCard = new RecyclerViewAdapterCard(cards, RecyclerViewActivity.this);
+            recyclerViewAdapterCard = new RecyclerViewAdapterCard(cardList, RecyclerViewActivity.this);
             recyclerView.setAdapter(recyclerViewAdapterCard);
             cardViewModel = ViewModelProviders.of(RecyclerViewActivity.this).get(CardViewModel.class);
             cardViewModel.getCards().observe(RecyclerViewActivity.this, new Observer<List<Card>>() {
                 @Override
                 public void onChanged(List<Card> cards) {
-                    RecyclerViewActivity.this.cards = cards;
-                    recyclerViewAdapterCard.setCards(cards);
+                    cardList = cards;
+                    recyclerViewAdapterCard.setCards(cardList);
                     recyclerViewAdapterCard.notifyDataSetChanged();
 
                 }
@@ -257,13 +264,13 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
 
         } else if (type.equals("AEPS")) {
-            recyclerViewAdapterAeps = new RecyclerViewAdapterAeps(aepss, RecyclerViewActivity.this);
+            recyclerViewAdapterAeps = new RecyclerViewAdapterAeps(aepsList, RecyclerViewActivity.this);
             recyclerView.setAdapter(recyclerViewAdapterAeps);
             aepsViewModel = ViewModelProviders.of(RecyclerViewActivity.this).get(AepsViewModel.class);
             aepsViewModel.getAepss().observe(RecyclerViewActivity.this, new Observer<List<Aeps>>() {
                 @Override
                 public void onChanged(List<Aeps> aepss) {
-                    RecyclerViewActivity.this.aepss = aepss;
+                    aepsList = aepss;
                     recyclerViewAdapterAeps.setAepss(aepss);
                     recyclerViewAdapterAeps.notifyDataSetChanged();
 
@@ -272,15 +279,30 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
 
         } else if (type.equals("MSWIPE")) {
-            recyclerViewAdapterMswipe = new RecyclerViewAdapterMswipe(mswipes, RecyclerViewActivity.this);
+            recyclerViewAdapterMswipe = new RecyclerViewAdapterMswipe(mswipeList, RecyclerViewActivity.this);
             recyclerView.setAdapter(recyclerViewAdapterMswipe);
             mswipeViewModel = new ViewModelProvider(getViewModelStore(), getDefaultViewModelProviderFactory()).get(MswipeViewModel.class);
             mswipeViewModel.getmSwipes().observe(RecyclerViewActivity.this, new Observer<List<Mswipe>>() {
                 @Override
                 public void onChanged(List<Mswipe> mswipes) {
-                    RecyclerViewActivity.this.mswipes = mswipes;
+                    mswipeList = mswipes;
                     recyclerViewAdapterMswipe.setMswipes(mswipes);
                     recyclerViewAdapterMswipe.notifyDataSetChanged();
+
+                }
+            });
+
+
+        } else if (type.equals("DMT")) {
+            recyclerViewAdapterDMT = new RecyclerViewAdapterDMT(dmtList, RecyclerViewActivity.this);
+            recyclerView.setAdapter(recyclerViewAdapterDMT);
+            dmtViewModel = new ViewModelProvider(getViewModelStore(), getDefaultViewModelProviderFactory()).get(DMTViewModel.class);
+            dmtViewModel.getdmts().observe(RecyclerViewActivity.this, new Observer<List<DMT>>() {
+                @Override
+                public void onChanged(List<DMT> dmts) {
+                    dmtList = dmts;
+                    recyclerViewAdapterDMT.setDmts(dmts);
+                    recyclerViewAdapterDMT.notifyDataSetChanged();
 
                 }
             });

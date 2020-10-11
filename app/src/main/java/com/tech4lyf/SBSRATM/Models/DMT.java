@@ -226,8 +226,5 @@ public class DMT implements Serializable, Parcelable {
 
     }
 
-    /*
-    {"":"352720352810352811","":"00001","":null,"":null,"":"352720","AP":"352810","OP":"352811","":"MonAug032020123550","":"7231247","":"17622639",
-    "":"IMPS","amount":"10","":"14.25","":"0","":"Transaction Successful","":"1200803123536RQCRZ","":"021612392793","":"021612392793","":"Mrs VIJAYALAKSHMI",
-    "":null,"":null}*/
+
 }

@@ -7,7 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.gson.Gson;
-import com.tech4lyf.SBSRATM.Models.Mswipe;
+import com.tech4lyf.SBSRATM.Models.DMT;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,27 +19,26 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
-public class MswipeViewModel extends AndroidViewModel {
+public class DMTViewModel extends AndroidViewModel {
     private JSONArray jsonArray;
-    private MutableLiveData<List<Mswipe>> mSwipes;
-    private List<Mswipe> mSwipesList = new ArrayList<>(Collections.<Mswipe>emptyList());
+    private MutableLiveData<List<DMT>> dmts;
+    private List<DMT> dmtList = new ArrayList<>();
 
-    public MswipeViewModel(@NonNull Application application) {
+    public DMTViewModel(@NonNull Application application) {
         super(application);
-        mSwipes = new MutableLiveData<>(mSwipesList);
-        mSwipes.setValue(mSwipesList);
+        dmts = new MutableLiveData<>(dmtList);
+        dmts.setValue(dmtList);
         getMSwipesList();
     }
 
-    public MutableLiveData<List<Mswipe>> getmSwipes() {
-        return mSwipes;
+    public MutableLiveData<List<DMT>> getdmts() {
+        return dmts;
     }
 
     private void getMSwipesList() {
-        final String urlString = "https://sbsrkannam.com/dashboard/DbMswipe.php";
+        final String urlString = "https://sbsrkannam.com/dashboard/DbDMT.php";
 
         new Thread(new Runnable() {
             @Override
@@ -65,8 +64,8 @@ public class MswipeViewModel extends AndroidViewModel {
                         String jsonArrayOnly = jsonArrayWithExtras.substring(jsonArrayWithExtras.indexOf("["), jsonArrayWithExtras.indexOf("]") + 1);
                         jsonArray = new JSONArray(jsonArrayOnly);
                         for (int i = 0; i < jsonArray.length(); i++)
-                            if (mSwipesList.add( new Gson().fromJson(jsonArray.getJSONObject(i).toString(),Mswipe.class)))
-                                mSwipes.postValue(mSwipesList);
+                            if (dmtList.add(new Gson().fromJson(jsonArray.getJSONObject(i).toString(), DMT.class)))
+                                dmts.postValue(dmtList);
 
                     }
                 } catch (IOException | JSONException e) {
@@ -76,6 +75,4 @@ public class MswipeViewModel extends AndroidViewModel {
             }
         }).start();
     }
-
-
 }

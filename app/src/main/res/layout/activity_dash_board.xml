@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite">
+    android:background="@color/colorOffWhite">
 
     <RelativeLayout
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorWhite"
+        android:background="@color/colorOffWhite"
         tools:context=".DashBoardActivity">
 
 
@@ -515,6 +515,63 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/activity_dash_board_dashboard_dmt"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorOffWhite"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight=".75"
+                            android:padding="8dp"
+                            android:src="@mipmap/fast_tag" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginHorizontal="6dp"
+                            android:layout_weight="1.25"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/activity_dash_board_dmt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:layout_marginVertical="10dp"
+                                android:text="187080"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:text="DMT \n(INR)"
+                                android:textColor="@color/colorSeventyFivePercentBlack"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/activity_dash_board_dashboard_wallet"
                     android:layout_width="0dp"
@@ -524,6 +581,7 @@
                     android:clickable="true"
                     android:focusable="true"
                     android:foreground="?attr/selectableItemBackground"
+                    android:visibility="invisible"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="2dp"
                     app:cardUseCompatPadding="true">
@@ -563,62 +621,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
                                 android:text="WALLET\n(INR)"
-                                android:textColor="@color/colorSeventyFivePercentBlack"
-                                android:textSize="12dp"
-                                android:textStyle="bold" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/activity_dash_board_dashboard_fast_tag"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:background="@color/colorOffWhite"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="2dp"
-                    app:cardUseCompatPadding="true">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight=".75"
-                            android:padding="8dp"
-                            android:src="@mipmap/fast_tag" />
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginHorizontal="6dp"
-                            android:layout_weight="1.25"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/activity_dash_board_fast_tag"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="start"
-                                android:layout_marginVertical="10dp"
-                                android:text="187080"
-                                android:textColor="@color/colorAccent"
-                                android:textSize="20dp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="start"
-                                android:text="FAST TAG\n(INR)"
                                 android:textColor="@color/colorSeventyFivePercentBlack"
                                 android:textSize="12dp"
                                 android:textStyle="bold" />

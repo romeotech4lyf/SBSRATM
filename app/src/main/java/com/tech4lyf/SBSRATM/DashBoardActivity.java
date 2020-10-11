@@ -31,7 +31,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     private CardView dashBoardAeps;
     private CardView dashBoardMSwipe;
     private CardView dashBoardWallet;
-    private CardView dashBoardFastTag;
+    private CardView dashBoardDMT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,18 +53,19 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         aeps = findViewById(R.id.activity_dash_board_aeps);
         bbps = findViewById(R.id.activity_dash_board_mswipe);
         wallet = findViewById(R.id.activity_dash_board_wallet);
-        fastTag = findViewById(R.id.activity_dash_board_fast_tag);
+        fastTag = findViewById(R.id.activity_dash_board_dmt);
         dashBoardCyberPlat = findViewById(R.id.activity_dash_board_dashboard_cyber_plat);
         dashBoardCard = findViewById(R.id.activity_dash_board_dashboard_card);
         dashBoardAeps = findViewById(R.id.activity_dash_board_dashboard_aeps);
         dashBoardMSwipe = findViewById(R.id.activity_dash_board_dashboard_mswipe);
         dashBoardWallet = findViewById(R.id.activity_dash_board_dashboard_wallet);
-        dashBoardFastTag = findViewById(R.id.activity_dash_board_dashboard_fast_tag);
+        dashBoardDMT = findViewById(R.id.activity_dash_board_dashboard_dmt);
 
         dashBoardCyberPlat.setOnClickListener(this);
         dashBoardCard.setOnClickListener(this);
         dashBoardAeps.setOnClickListener(this);
         dashBoardMSwipe.setOnClickListener(this);
+        dashBoardDMT.setOnClickListener(this);
 
 
     }
@@ -84,7 +85,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
             case R.id.activity_dash_board_dashboard_mswipe:
                 startRecyclerViewActivity("MSWIPE");
                 break;
-            case R.id.activity_dash_board_dashboard_fast_tag:
+            case R.id.activity_dash_board_dashboard_dmt:
+                startRecyclerViewActivity("DMT");
                 break;
             case R.id.activity_dash_board_dashboard_wallet:
                 break;

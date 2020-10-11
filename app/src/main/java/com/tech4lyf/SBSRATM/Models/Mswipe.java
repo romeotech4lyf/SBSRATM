@@ -6,6 +6,17 @@ import android.os.Parcelable;
 import java.io.Serializable;
 
 public class Mswipe implements Parcelable, Serializable {
+    public static final Creator<Mswipe> CREATOR = new Creator<Mswipe>() {
+        @Override
+        public Mswipe createFromParcel(Parcel in) {
+            return new Mswipe(in);
+        }
+
+        @Override
+        public Mswipe[] newArray(int size) {
+            return new Mswipe[size];
+        }
+    };
     private String trans_date;
     private String trans_time;
     private String SessionNo;
@@ -69,18 +80,6 @@ public class Mswipe implements Parcelable, Serializable {
         bcid = in.readString();
         kioskid = in.readString();
     }
-
-    public static final Creator<Mswipe> CREATOR = new Creator<Mswipe>() {
-        @Override
-        public Mswipe createFromParcel(Parcel in) {
-            return new Mswipe(in);
-        }
-
-        @Override
-        public Mswipe[] newArray(int size) {
-            return new Mswipe[size];
-        }
-    };
 
     public String getTrans_date() {
         return trans_date;
@@ -226,6 +225,7 @@ public class Mswipe implements Parcelable, Serializable {
         this.kioskid = kioskid;
     }
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -233,24 +233,7 @@ public class Mswipe implements Parcelable, Serializable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(trans_date);
-        parcel.writeString(trans_time);
-        parcel.writeString(SessionNo);
-        parcel.writeString(DeviceId);
-        parcel.writeString(MobileNo);
-        parcel.writeString(Amount);
-        parcel.writeString(TransactionStatus);
-        parcel.writeString(AuthCode);
-        parcel.writeString(RRNo);
-        parcel.writeString(MID);
-        parcel.writeString(TID);
-        parcel.writeString(TransactionDate);
-        parcel.writeString(cardHolderName);
-        parcel.writeString(cardFirstSixDigits);
-        parcel.writeString(expiryDate);
-        parcel.writeString(maskedPAN);
-        parcel.writeString(bcid);
-        parcel.writeString(kioskid);
+
     }
 }
 

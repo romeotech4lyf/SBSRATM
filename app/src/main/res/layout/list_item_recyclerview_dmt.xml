@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list_item_recyclerview_mswipe_cardview"
+    android:id="@+id/list_item_recyclerview_dmt_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
@@ -16,7 +16,7 @@
 
 
     <TextView
-        android:id="@+id/list_item_recyclerview_mswipe_rr_no"
+        android:id="@+id/list_item_recyclerview_dmt_ipay_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top|start"
@@ -29,7 +29,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/list_item_recyclerview_mswipe_amount"
+        android:id="@+id/list_item_recyclerview_dmt_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|end"
@@ -43,7 +43,7 @@
         android:textStyle="bold" />
 
     <net.cachapa.expandablelayout.ExpandableLayout
-        android:id="@+id/list_item_recyclerview_mswipe_expandable_layout"
+        android:id="@+id/list_item_recyclerview_dmt_expandable_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -57,7 +57,7 @@
 
 
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_masked_pan"
+                android:id="@+id/list_item_recyclerview_dmt_sd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -68,7 +68,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_first_six_digits"
+                android:id="@+id/list_item_recyclerview_dmt_ap"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -80,7 +80,7 @@
 
 
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_expiry_date"
+                android:id="@+id/list_item_recyclerview_dmt_op"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -91,7 +91,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_device_id"
+                android:id="@+id/list_item_recyclerview_dmt_session_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -101,8 +101,9 @@
                 android:textSize="12dp"
                 android:textStyle="normal" />
 
+
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_mobile_no"
+                android:id="@+id/list_item_recyclerview_dmt_bcid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -113,7 +114,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_bcid"
+                android:id="@+id/list_item_recyclerview_dmt_kioskid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -124,7 +125,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_kioskid"
+                android:id="@+id/list_item_recyclerview_dmt_remitter_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -135,7 +136,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_mid"
+                android:id="@+id/list_item_recyclerview_dmt_remitter_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -146,7 +147,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_tid"
+                android:id="@+id/list_item_recyclerview_dmt_benificiary_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -157,7 +158,7 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_authcode"
+                android:id="@+id/list_item_recyclerview_dmt_benificiary_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -168,7 +169,51 @@
                 android:textStyle="normal" />
 
             <TextView
-                android:id="@+id/list_item_recyclerview_mswipe_transaction_status"
+                android:id="@+id/list_item_recyclerview_dmt_router_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Mobile No: 780392793"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/list_item_recyclerview_dmt_locked_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Mobile No: 780392793"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/list_item_recyclerview_dmt_ref_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Mobile No: 780392793"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/list_item_recyclerview_dmt_opr_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Mobile No: 780392793"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/list_item_recyclerview_dmt_transaction_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="bottom|start"
@@ -181,26 +226,27 @@
 
         </LinearLayout>
 
+
         <TextView
-            android:id="@+id/list_item_recyclerview_mswipe_holder_name"
+            android:id="@+id/list_item_recyclerview_dmt_holder_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="400dp"
             android:background="@color/colorWhite"
             android:gravity="bottom|start"
             android:padding="5dp"
-            android:text="Card Holder Name: S.John"
+            android:text="Name: S.John"
             android:textColor="@color/colorAccent"
             android:textSize="12dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/list_item_recyclerview_mswipe_date"
+            android:id="@+id/list_item_recyclerview_dmt_date_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="400dp"
             android:gravity="bottom|end"
             android:padding="5dp"
             android:text="Date: 22/04/2020"
