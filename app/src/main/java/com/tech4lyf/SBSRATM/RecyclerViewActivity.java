@@ -20,9 +20,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterCard;
 import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterCyberPlat;
 import com.tech4lyf.SBSRATM.Models.Card;
-import com.tech4lyf.SBSRATM.Models.CardViewModel;
+import com.tech4lyf.SBSRATM.ViewModels.CardViewModel;
 import com.tech4lyf.SBSRATM.Models.CyberPlat;
-import com.tech4lyf.SBSRATM.Models.CyberPlatViewModel;
+import com.tech4lyf.SBSRATM.ViewModels.CyberPlatViewModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
