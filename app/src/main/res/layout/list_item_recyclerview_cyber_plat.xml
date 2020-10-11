@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list_item_recyclerview_cyber_plat_cardview"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
     android:background="@color/colorOffWhite"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
     app:cardCornerRadius="5dp"
     app:cardElevation="2dp"
-    tools:ignore="HardcodedText,RtlSymmetry,SpUsage">
+    android:layout_margin="10dp"
+    android:id="@+id/list_item_recyclerview_cyber_plat_cardview">
 
 
     <TextView
@@ -27,8 +24,7 @@
         android:text="Id: 1200803123536RQCRZ"
         android:textColor="@color/colorWhite"
         android:textSize="20dp"
-        android:textStyle="bold"
-         />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/list_item_recyclerview_cyber_plat_amount"
@@ -37,20 +33,19 @@
         android:layout_gravity="top|end"
         android:background="@color/colorAccent"
         android:gravity="bottom|end"
-        android:paddingTop="10dp"
         android:paddingEnd="5dp"
+        android:paddingTop="10dp"
         android:text="Amount(INR): 46857"
         android:textColor="@color/colorWhite"
         android:textSize="12dp"
-        android:textStyle="normal"
-         />
+        android:textStyle="normal" />
 
     <net.cachapa.expandablelayout.ExpandableLayout
-        android:id="@+id/list_item_recyclerview_cyber_plat_expandable_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        app:el_expanded="true">
+        app:el_expanded="false"
+        android:id="@+id/list_item_recyclerview_cyber_plat_expandable_layout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -104,6 +99,17 @@
 
 
             <TextView
+                android:id="@+id/list_item_recyclerview_cyber_plat_trans_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Transaction Date : 23543"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
+            <TextView
                 android:id="@+id/list_item_recyclerview_cyber_plat_ref_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -132,27 +138,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="160dp"
             android:background="@color/colorWhite"
             android:gravity="bottom|start"
             android:padding="5dp"
             android:text="Name: Mrs Vijayalakshmi"
             android:textColor="@color/colorAccent"
             android:textSize="12dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="180dp" />
 
         <TextView
             android:id="@+id/list_item_recyclerview_cyber_plat_charged_amt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="160dp"
             android:gravity="bottom|end"
             android:padding="5dp"
             android:text="Charged(INR):  46857"
             android:textColor="@color/colorAccent"
             android:textSize="12dp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="180dp" />
     </net.cachapa.expandablelayout.ExpandableLayout>
 
 

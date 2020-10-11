@@ -18,14 +18,6 @@ import net.cachapa.expandablelayout.ExpandableLayout;
 import java.util.List;
 
 public class RecyclerViewAdapterCard extends RecyclerView.Adapter<RecyclerViewAdapterCard.ViewHolder> {
-    private List<Card> cards;
-    private Context context;
-
-    public RecyclerViewAdapterCard(List<Card> cards, Context context) {
-        this.cards = cards;
-        this.context = context;
-    }
-
     public List<Card> getCards() {
         return cards;
     }
@@ -42,30 +34,39 @@ public class RecyclerViewAdapterCard extends RecyclerView.Adapter<RecyclerViewAd
         this.context = context;
     }
 
+    private List<Card> cards;
+    private Context context;
+
+    public RecyclerViewAdapterCard(List<Card> cards, Context context){
+        this.cards = cards;
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public RecyclerViewAdapterCard.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new RecyclerViewAdapterCard
-                .ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_item_recyclerview_card, parent, false));
+                .ViewHolder(LayoutInflater.from(context).inflate(R.layout.list_item_recyclerview_card,parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull final RecyclerViewAdapterCard.ViewHolder holder, int position) {
-        if (cards.size() > 0) {
+        if(cards.size()>0) {
             Card card = cards.get(position);
-            holder.rrNo.setText("RR: " + card.getRRNo());
-            holder.amount.setText("Amount(INR): " + card.getAmount());
-            holder.cardFirstSixDigits.setText("Card First Six Digits: " + card.getCardFirstSixDigits());
-            holder.cardExpiryDate.setText("Card Expiry Date: " + card.getExpiryDate());
-            holder.deviceId.setText("Device Id: " + card.getDeviceId());
-            holder.cardHolderName.setText("Card Holder Name: " + card.getCardHolderName());
+            holder.rrNo.setText("RR: "+card.getRRNo());
+            holder.amount.setText("Amount(INR): "+card.getAmount());
+            holder.cardFirstSixDigits.setText("Card First Six Digits: "+card.getCardFirstSixDigits());
+            holder.cardExpiryDate.setText("Card Expiry Date: "+card.getExpiryDate());
+            holder.deviceId.setText("Device Id: "+card.getDeviceId());
+            holder.mobileNo.setText("Mobile No: "+card.getMobileNo());
+            holder.cardHolderName.setText("Card Holder Name: "+card.getCardHolderName());
             holder.date.setText(card.getTransactionDate());
 
 
             holder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (holder.expandableLayout.isExpanded())
+                    if(holder.expandableLayout.isExpanded())
                         holder.expandableLayout.collapse();
                     else
                         holder.expandableLayout.expand();
@@ -89,6 +90,7 @@ public class RecyclerViewAdapterCard extends RecyclerView.Adapter<RecyclerViewAd
         TextView cardFirstSixDigits;
         TextView cardExpiryDate;
         TextView deviceId;
+        TextView mobileNo;
         TextView cardHolderName;
         TextView date;
         ExpandableLayout expandableLayout;
@@ -103,6 +105,7 @@ public class RecyclerViewAdapterCard extends RecyclerView.Adapter<RecyclerViewAd
             cardFirstSixDigits = itemView.findViewById(R.id.list_item_recyclerview_card_first_six_digits);
             cardExpiryDate = itemView.findViewById(R.id.list_item_recyclerview_card_expiry_date);
             deviceId = itemView.findViewById(R.id.list_item_recyclerview_card_device_id);
+            mobileNo = itemView.findViewById(R.id.list_item_recyclerview_card_mobile_no);
             cardHolderName = itemView.findViewById(R.id.list_item_recyclerview_card_holder_name);
             date = itemView.findViewById(R.id.list_item_recyclerview_card_date);
             expandableLayout = itemView.findViewById(R.id.list_item_recyclerview_card_expandable_layout);

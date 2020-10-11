@@ -36,8 +36,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="16dp"
-        android:hint="Search by Remittet Phone No"
+        android:hint="Search by Amount"
         android:layout_marginTop="80dp"
+        android:maxLines="1"
+        android:imeOptions="actionSearch"
         android:id="@+id/activity_recycler_view_search_edit_text" />
 
         <RadioGroup

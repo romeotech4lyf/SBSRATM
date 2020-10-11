@@ -40,7 +40,7 @@ public class CyberPlatViewModel extends AndroidViewModel {
     private void getCyberPlat() {
 
 
-            final String urlString = "https://developers.tech4lyf.com/romeotamizh/sbsr/CyberPlatCashTransfer.php";
+            final String urlString = "https://sbsrkannam.com/dashboard/CyberPlatCashTransfer.php";
             new Thread(new Runnable() {
                 @Override
                 public void run() {

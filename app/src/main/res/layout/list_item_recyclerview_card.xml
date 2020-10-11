@@ -98,6 +98,17 @@
                 android:textSize="12dp"
                 android:textStyle="normal" />
 
+            <TextView
+                android:id="@+id/list_item_recyclerview_card_mobile_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom|start"
+                android:padding="5dp"
+                android:text="Mobile No: 780392793"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp"
+                android:textStyle="normal" />
+
 
         </LinearLayout>
 
@@ -106,7 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="130dp"
             android:background="@color/colorWhite"
             android:gravity="bottom|start"
             android:padding="5dp"
@@ -120,7 +131,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="130dp"
             android:gravity="bottom|end"
             android:padding="5dp"
             android:text="Date: 22/04/2020"
