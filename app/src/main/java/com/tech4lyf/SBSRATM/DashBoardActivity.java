@@ -29,7 +29,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     private CardView dashBoardCyberPlat;
     private CardView dashBoardCard;
     private CardView dashBoardAeps;
-    private CardView dashBoardBbps;
+    private CardView dashBoardMSwipe;
     private CardView dashBoardWallet;
     private CardView dashBoardFastTag;
 
@@ -51,19 +51,20 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         cyber_plat = findViewById(R.id.activity_dash_board_cyber_plat);
         card = findViewById(R.id.activity_dash_board_card);
         aeps = findViewById(R.id.activity_dash_board_aeps);
-        bbps = findViewById(R.id.activity_dash_board_bbps);
+        bbps = findViewById(R.id.activity_dash_board_mswipe);
         wallet = findViewById(R.id.activity_dash_board_wallet);
         fastTag = findViewById(R.id.activity_dash_board_fast_tag);
         dashBoardCyberPlat = findViewById(R.id.activity_dash_board_dashboard_cyber_plat);
         dashBoardCard = findViewById(R.id.activity_dash_board_dashboard_card);
         dashBoardAeps = findViewById(R.id.activity_dash_board_dashboard_aeps);
-        dashBoardBbps = findViewById(R.id.activity_dash_board_dashboard_bbps);
+        dashBoardMSwipe = findViewById(R.id.activity_dash_board_dashboard_mswipe);
         dashBoardWallet = findViewById(R.id.activity_dash_board_dashboard_wallet);
         dashBoardFastTag = findViewById(R.id.activity_dash_board_dashboard_fast_tag);
 
         dashBoardCyberPlat.setOnClickListener(this);
         dashBoardCard.setOnClickListener(this);
         dashBoardAeps.setOnClickListener(this);
+        dashBoardMSwipe.setOnClickListener(this);
 
 
     }
@@ -80,7 +81,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
             case R.id.activity_dash_board_dashboard_aeps:
                 startRecyclerViewActivity("AEPS");
                 break;
-            case R.id.activity_dash_board_dashboard_bbps:
+            case R.id.activity_dash_board_dashboard_mswipe:
+                startRecyclerViewActivity("MSWIPE");
                 break;
             case R.id.activity_dash_board_dashboard_fast_tag:
                 break;
@@ -91,8 +93,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         }
     }
 
-    private void startRecyclerViewActivity(String type){
-        DashBoardActivity.this.startActivity(new Intent(DashBoardActivity.this,RecyclerViewActivity.class)
-                        .putExtra("TYPE",type));
+    private void startRecyclerViewActivity(String type) {
+        DashBoardActivity.this
+                .startActivity(new Intent(DashBoardActivity.this, RecyclerViewActivity.class).putExtra("TYPE", type));
     }
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -323,7 +322,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="Cyber Plat\n(INR)"
+                                android:text="CYBER PLAT\n(INR)"
                                 android:textColor="@color/colorSeventyFivePercentBlack"
                                 android:textSize="12dp"
                                 android:textStyle="bold" />
@@ -454,7 +453,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/activity_dash_board_dashboard_bbps"
+                    android:id="@+id/activity_dash_board_dashboard_mswipe"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
@@ -486,7 +485,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/activity_dash_board_bbps"
+                                android:id="@+id/activity_dash_board_mswipe"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
@@ -500,7 +499,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="start"
-                                android:text="BBPS\n(INR)"
+                                android:text="M-SWIPE\n(INR)"
                                 android:textColor="@color/colorSeventyFivePercentBlack"
                                 android:textSize="12dp"
                                 android:textStyle="bold" />

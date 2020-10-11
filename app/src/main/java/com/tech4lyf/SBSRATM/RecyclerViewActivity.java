@@ -1,18 +1,16 @@
 package com.tech4lyf.SBSRATM;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,16 +18,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterAeps;
 import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterCard;
 import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterCyberPlat;
+import com.tech4lyf.SBSRATM.Adapters.RecyclerViewAdapterMswipe;
 import com.tech4lyf.SBSRATM.Models.Aeps;
 import com.tech4lyf.SBSRATM.Models.Card;
+import com.tech4lyf.SBSRATM.Models.CyberPlat;
+import com.tech4lyf.SBSRATM.Models.Mswipe;
 import com.tech4lyf.SBSRATM.ViewModels.AepsViewModel;
 import com.tech4lyf.SBSRATM.ViewModels.CardViewModel;
-import com.tech4lyf.SBSRATM.Models.CyberPlat;
 import com.tech4lyf.SBSRATM.ViewModels.CyberPlatViewModel;
+import com.tech4lyf.SBSRATM.ViewModels.MswipeViewModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class RecyclerViewActivity extends AppCompatActivity {
@@ -48,13 +48,15 @@ public class RecyclerViewActivity extends AppCompatActivity {
     private List<CyberPlat> cyberPlats;
     private List<Card> cards;
     private List<Aeps> aepss;
+    private List<Mswipe> mswipes;
     private RecyclerViewAdapterCyberPlat recyclerViewAdapterCyberPlat;
     private RecyclerViewAdapterCard recyclerViewAdapterCard;
     private RecyclerViewAdapterAeps recyclerViewAdapterAeps;
+    private RecyclerViewAdapterMswipe recyclerViewAdapterMswipe;
     private CyberPlatViewModel cyberPlatViewModel;
     private CardViewModel cardViewModel;
     private AepsViewModel aepsViewModel;
-    private EventHandlers eventHandlers = new EventHandlers();
+    private MswipeViewModel mswipeViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
         cyberPlats = new ArrayList<>();
         cards = new ArrayList<>();
         aepss = new ArrayList<>();
+        mswipes = new ArrayList<>();
 
 
         type = getIntent().getStringExtra("TYPE");
@@ -168,10 +171,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
                     recyclerViewAdapterCard.notifyDataSetChanged();
 
                 }
+
             }
         });
-
-
 
 
       /*  editTextSearch.addTextChangedListener(new TextWatcher() {
@@ -239,9 +241,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
                 }
             });
-        }
-
-        if (type.equals("CARD")) {
+        } else if (type.equals("CARD")) {
             recyclerViewAdapterCard = new RecyclerViewAdapterCard(cards, RecyclerViewActivity.this);
             recyclerView.setAdapter(recyclerViewAdapterCard);
             cardViewModel = ViewModelProviders.of(RecyclerViewActivity.this).get(CardViewModel.class);
@@ -263,8 +263,24 @@ public class RecyclerViewActivity extends AppCompatActivity {
             aepsViewModel.getAepss().observe(RecyclerViewActivity.this, new Observer<List<Aeps>>() {
                 @Override
                 public void onChanged(List<Aeps> aepss) {
+                    RecyclerViewActivity.this.aepss = aepss;
                     recyclerViewAdapterAeps.setAepss(aepss);
                     recyclerViewAdapterAeps.notifyDataSetChanged();
+
+                }
+            });
+
+
+        } else if (type.equals("MSWIPE")) {
+            recyclerViewAdapterMswipe = new RecyclerViewAdapterMswipe(mswipes, RecyclerViewActivity.this);
+            recyclerView.setAdapter(recyclerViewAdapterMswipe);
+            mswipeViewModel = new ViewModelProvider(getViewModelStore(), getDefaultViewModelProviderFactory()).get(MswipeViewModel.class);
+            mswipeViewModel.getmSwipes().observe(RecyclerViewActivity.this, new Observer<List<Mswipe>>() {
+                @Override
+                public void onChanged(List<Mswipe> mswipes) {
+                    RecyclerViewActivity.this.mswipes = mswipes;
+                    recyclerViewAdapterMswipe.setMswipes(mswipes);
+                    recyclerViewAdapterMswipe.notifyDataSetChanged();
 
                 }
             });
