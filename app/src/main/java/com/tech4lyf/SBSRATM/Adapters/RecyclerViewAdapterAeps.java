@@ -61,7 +61,7 @@ public class RecyclerViewAdapterAeps extends RecyclerView.Adapter<RecyclerViewAd
             holder.kioskid.setText("Kioskid: " + aeps.getKioskid());
             holder.bcid.setText("BCID " + aeps.getBcid());
             holder.serviceProviderId.setText("Service Provider Id " + aeps.getServiceProviderId());
-            holder.transactionDate.setText("Date: " + aeps.getDateTime());
+            holder.transactionDate.setText("Date: " + aeps.getTransdate() + " " + aeps.getTranstime());
             holder.totalAmount.setText("Total Amount(INR): " + aeps.getTotalAmount());
 
 

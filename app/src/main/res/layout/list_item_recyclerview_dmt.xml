@@ -14,7 +14,6 @@
     app:cardElevation="2dp"
     tools:ignore="HardcodedText,RtlSymmetry,SpUsage">
 
-
     <TextView
         android:id="@+id/list_item_recyclerview_dmt_ipay_id"
         android:layout_width="match_parent"
@@ -223,9 +222,7 @@
                 android:textSize="12dp"
                 android:textStyle="normal" />
 
-
         </LinearLayout>
-
 
         <TextView
             android:id="@+id/list_item_recyclerview_dmt_holder_name"
@@ -254,6 +251,5 @@
             android:textSize="12dp"
             android:textStyle="bold" />
     </net.cachapa.expandablelayout.ExpandableLayout>
-
 
 </androidx.cardview.widget.CardView>
