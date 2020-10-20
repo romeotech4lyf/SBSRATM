@@ -33,6 +33,7 @@ import com.tech4lyf.SBSRATM.ViewModels.MswipeViewModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class RecyclerViewActivity extends AppCompatActivity {
@@ -129,8 +130,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                         recyclerViewAdapterCyberPlat.notifyDataSetChanged();
                         Log.d(search, cyberPlatsSearch.toString());
                     }
-                }
-                if (type.equals("CARD")) {
+                } else if (type.equals("CARD")) {
                     List<Card> cardsSearch = new ArrayList<Card>(Arrays.asList(new Card[0]));
                     for (Card card : cardList) {
                         switch (searchType) {
@@ -172,8 +172,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 if (type.equals("CYBERPLAT")) {
                     recyclerViewAdapterCyberPlat.setCyberPlats(cyberPlatList);
                     recyclerViewAdapterCyberPlat.notifyDataSetChanged();
-                }
-                if (type.equals("CARD")) {
+                } else if (type.equals("CARD")) {
                     recyclerViewAdapterCard.setCards(cardList);
                     recyclerViewAdapterCard.notifyDataSetChanged();
 
@@ -182,30 +181,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
             }
         });
 
-
-      /*  editTextSearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                if (editable.toString() != null) {
-                    search = editable.toString();
-                    Log.d(editable.toString(), search);
-                    eventHandlers.triggerCyberPlatSearchListener(search,searchType);
-
-                }else
-                    eventHandlers.triggerCyberPlatSearchListener(null,searchType);
-
-            }
-        });*/
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -242,6 +217,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(List<CyberPlat> cyberPlats) {
                     cyberPlatList = cyberPlats;
+                    Collections.reverse(cyberPlatList);
                     recyclerViewAdapterCyberPlat.setCyberPlats(cyberPlatList);
                     recyclerViewAdapterCyberPlat.notifyDataSetChanged();
 
@@ -256,6 +232,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(List<Card> cards) {
                     cardList = cards;
+                    Collections.reverse(cardList);
                     recyclerViewAdapterCard.setCards(cardList);
                     recyclerViewAdapterCard.notifyDataSetChanged();
 
@@ -271,6 +248,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(List<Aeps> aepss) {
                     aepsList = aepss;
+                    Collections.reverse(aepsList);
                     recyclerViewAdapterAeps.setAepss(aepss);
                     recyclerViewAdapterAeps.notifyDataSetChanged();
 
@@ -286,6 +264,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(List<Mswipe> mswipes) {
                     mswipeList = mswipes;
+                    Collections.reverse(mswipeList);
                     recyclerViewAdapterMswipe.setMswipes(mswipes);
                     recyclerViewAdapterMswipe.notifyDataSetChanged();
 
@@ -301,6 +280,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
                 @Override
                 public void onChanged(List<DMT> dmts) {
                     dmtList = dmts;
+                    Collections.reverse(dmtList);
                     recyclerViewAdapterDMT.setDmts(dmts);
                     recyclerViewAdapterDMT.notifyDataSetChanged();
 
